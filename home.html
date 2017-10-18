@@ -46,7 +46,26 @@
       <button onclick="changeGradient()">Change gradient</button>
       <button onclick="changeRadius()">Change radius</button>
       <button onclick="changeOpacity()">Change opacity</button>
+			<div id="coordinates">
+				Bounds: <br>
+				<div>
+				North: <output id="north"> degrees
+				<br>
+				</div>
+				<div>
+				West: <output id="west"> degrees
+				<br>
+				</div>
+				<div>
+				East: <output id="east"> degrees
+				<br>
+				</div>
+				<div>
+				South :<output id="south"> degrees
+				</div>
+			</div>
     </div>
+
     <div id="map"></div>
     <script>
 
@@ -67,6 +86,14 @@
           data: getPoints(),
           map: map
         });
+				google.maps.event.addListener(map, "bounds_changed", function() {
+   			// send the new bounds back to your server
+				bounds = map.getBounds().toJSON()
+				document.getElementById("north").innerHTML = bounds.north;
+				document.getElementById("west").innerHTML = bounds.north
+				document.getElementById("east").innerHTML = bounds.east;
+				document.getElementById("south").innerHTML = bounds.south;
+				});
       }
 
       function toggleHeatmap() {

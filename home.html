@@ -4,12 +4,9 @@
     <meta charset="utf-8">
     <title>Heatmaps</title>
     <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
       #map {
         height: 100%;
       }
-      /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
         margin: 0;
@@ -22,7 +19,6 @@
         z-index: 5;
         background-color: #fff;
         padding: 5px;
-        border: 1px solid #999;
         text-align: center;
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
@@ -30,38 +26,35 @@
       }
       #floating-panel {
         background-color: #fff;
-        border: 1px solid #999;
-        left: 25%;
+        left: 0%;
+				top: 78%;
+				right: 70%;
         padding: 5px;
         position: absolute;
-        top: 10px;
+				float: left;
         z-index: 5;
+				text-align: left;
       }
     </style>
   </head>
 
   <body>
     <div id="floating-panel">
-      <button onclick="toggleHeatmap()">Toggle Heatmap</button>
       <button onclick="changeGradient()">Change gradient</button>
       <button onclick="changeRadius()">Change radius</button>
       <button onclick="changeOpacity()">Change opacity</button>
 			<div id="coordinates">
-				Bounds: <br>
 				<div>
 				North: <output id="north"> degrees
-				<br>
 				</div>
 				<div>
 				West: <output id="west"> degrees
-				<br>
 				</div>
 				<div>
 				East: <output id="east"> degrees
-				<br>
 				</div>
 				<div>
-				South :<output id="south"> degrees
+				South: <output id="south"> degrees
 				</div>
 			</div>
     </div>
@@ -94,10 +87,6 @@
 				document.getElementById("east").innerHTML = bounds.east;
 				document.getElementById("south").innerHTML = bounds.south;
 				});
-      }
-
-      function toggleHeatmap() {
-        heatmap.setMap(heatmap.getMap() ? null : map);
       }
 
       function changeGradient() {

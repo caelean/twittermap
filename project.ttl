@@ -1,208 +1,183 @@
 @prefix : <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix ex: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/caeleanb/ontologies/twittermap> .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap> a owl:Ontology .
-# 
-# 
-# #################################################################
-# #
-# #    Object Properties
-# #
-# #################################################################
-# 
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasHandle
+<http://www.semanticweb.org/caeleanb/ontologies/twittermap> rdf:type owl:Ontology .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasHandle> a owl:ObjectProperty ;
-	rdfs:domain _:genid1 .
+#################################################################
+#    Object Properties
+#################################################################
 
-_:genid1 a owl:Class ;
-	owl:unionOf _:genid3 .
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasHandle
+ex:hasHandle rdf:type owl:ObjectProperty ;
+             rdfs:domain [ rdf:type owl:Class ;
+                           owl:unionOf ( ex:Company
+                                         ex:Person
+                                       )
+                         ] ;
+             rdfs:range ex:TwitterHandle .
 
-_:genid3 a rdf:List ;
-	rdf:first <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Company> ;
-	rdf:rest _:genid2 .
 
-_:genid2 a rdf:List ;
-	rdf:first <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Person> ;
-	rdf:rest rdf:nil .
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLocation
+ex:hasLocation rdf:type owl:ObjectProperty ;
+               rdfs:domain ex:TwitterHandle ;
+               rdfs:range ex:Location .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasHandle> rdfs:range <http://www.semanticweb.org/caeleanb/ontologies/twittermap##TwitterHandle> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasLocation
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasLocation> a owl:ObjectProperty ;
-	rdfs:domain <http://www.semanticweb.org/caeleanb/ontologies/twittermap##TwitterHandle> ;
-	rdfs:range <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Location> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasLatitude
+#################################################################
+#    Data properties
+#################################################################
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasLatitude> a owl:DatatypeProperty ;
-	rdfs:domain <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Location> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasLongitude
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLatitude
+ex:hasLatitude rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:Location .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasLongitude> a owl:DatatypeProperty ;
-	rdfs:domain <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Location> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasMarketCap
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasMarketCap> a owl:DatatypeProperty ;
-	rdfs:domain <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Company> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##influenceMetric
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLongitude
+ex:hasLongitude rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:Location .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##influenceMetric> a owl:DatatypeProperty ;
-	rdfs:domain <http://www.semanticweb.org/caeleanb/ontologies/twittermap##TwitterHandle> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##numFollowers
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##numFollowers> a owl:DatatypeProperty ;
-	rdfs:domain <http://www.semanticweb.org/caeleanb/ontologies/twittermap##TwitterHandle> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##numRetweets
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasMarketCap
+ex:hasMarketCap rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:Company .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##numRetweets> a owl:DatatypeProperty ;
-	rdfs:domain <http://www.semanticweb.org/caeleanb/ontologies/twittermap##TwitterHandle> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Classes
-# #
-# #################################################################
-# 
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##Actor
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##Actor> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Person> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##Athlete
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#influenceMetric
+ex:influenceMetric rdf:type owl:DatatypeProperty ;
+                   rdfs:domain ex:TwitterHandle .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##Athlete> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Person> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##Author
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##Author> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Person> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##AutomotiveCompany
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#numFollowers
+ex:numFollowers rdf:type owl:DatatypeProperty ;
+                rdfs:domain ex:TwitterHandle .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##AutomotiveCompany> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Company> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##Businessperson
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##Businessperson> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Person> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##Company
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#numRetweets
+ex:numRetweets rdf:type owl:DatatypeProperty ;
+               rdfs:domain ex:TwitterHandle .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##Company> a owl:Class ;
-	owl:equivalentClass _:genid4 .
 
-_:genid4 a owl:Restriction ;
-	owl:onProperty <http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasHandle> ;
-	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-	owl:onClass <http://www.semanticweb.org/caeleanb/ontologies/twittermap##TwitterHandle> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##FinancialCompany
+#################################################################
+#    Classes
+#################################################################
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##FinancialCompany> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Company> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##InternetCompany
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#Actor
+ex:Actor rdf:type owl:Class ;
+         rdfs:subClassOf ex:Person .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##InternetCompany> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Company> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##Location
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##Location> a owl:Class .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##Musician
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#Athlete
+ex:Athlete rdf:type owl:Class ;
+           rdfs:subClassOf ex:Person .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##Musician> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Person> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##Person
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##Person> a owl:Class ;
-	owl:equivalentClass _:genid5 .
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#Author
+ex:Author rdf:type owl:Class ;
+          rdfs:subClassOf ex:Person .
 
-_:genid5 a owl:Restriction ;
-	owl:onProperty <http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasHandle> ;
-	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-	owl:onClass <http://www.semanticweb.org/caeleanb/ontologies/twittermap##TwitterHandle> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##Politician
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##Politician> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Person> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##PrivateCompany
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#AutomotiveCompany
+ex:AutomotiveCompany rdf:type owl:Class ;
+                     rdfs:subClassOf ex:Company .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##PrivateCompany> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Company> ;
-	owl:disjointWith <http://www.semanticweb.org/caeleanb/ontologies/twittermap##PublicCompany> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##PublicCompany
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##PublicCompany> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Company> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##RetailCompany
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#Businessperson
+ex:Businessperson rdf:type owl:Class ;
+                  rdfs:subClassOf ex:Person .
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##RetailCompany> a owl:Class ;
-	rdfs:subClassOf <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Company> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap##TwitterHandle
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap##TwitterHandle> a owl:Class ;
-	owl:equivalentClass _:genid6 .
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company
+ex:Company rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty ex:hasHandle ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass ex:TwitterHandle
+                               ] .
 
-_:genid6 a owl:Restriction ;
-	owl:onProperty <http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasLocation> ;
-	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-	owl:onClass <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Location> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Individuals
-# #
-# #################################################################
-# 
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap#Donald_Trump
 
-:Donald_Trump a owl:NamedIndividual , <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Person> ;
-	<http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasHandle> <http://www.semanticweb.org/caeleanb/ontologies/twittermap#@RealDonaldTrump> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap#Washington_DC
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#FinancialCompany
+ex:FinancialCompany rdf:type owl:Class ;
+                    rdfs:subClassOf ex:Company .
 
-:Washington_DC a owl:NamedIndividual , <http://www.semanticweb.org/caeleanb/ontologies/twittermap##Location> .
-# 
-# http://www.semanticweb.org/caeleanb/ontologies/twittermap#@RealDonaldTrump
 
-<http://www.semanticweb.org/caeleanb/ontologies/twittermap#@RealDonaldTrump> a owl:NamedIndividual , <http://www.semanticweb.org/caeleanb/ontologies/twittermap##TwitterHandle> ;
-	<http://www.semanticweb.org/caeleanb/ontologies/twittermap##hasLocation> :Washington_DC .
-# 
-# Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#InternetCompany
+ex:InternetCompany rdf:type owl:Class ;
+                   rdfs:subClassOf ex:Company .
+
+
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location
+ex:Location rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#Musician
+ex:Musician rdf:type owl:Class ;
+            rdfs:subClassOf ex:Person .
+
+
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person
+ex:Person rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty ex:hasHandle ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass ex:TwitterHandle
+                              ] .
+
+
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#Politician
+ex:Politician rdf:type owl:Class ;
+              rdfs:subClassOf ex:Person .
+
+
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#PrivateCompany
+ex:PrivateCompany rdf:type owl:Class ;
+                  rdfs:subClassOf ex:Company ;
+                  owl:disjointWith ex:PublicCompany .
+
+
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#PublicCompany
+ex:PublicCompany rdf:type owl:Class ;
+                 rdfs:subClassOf ex:Company .
+
+
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#RetailCompany
+ex:RetailCompany rdf:type owl:Class ;
+                 rdfs:subClassOf ex:Company .
+
+
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle
+ex:TwitterHandle rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty ex:hasLocation ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass ex:Location
+                                     ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#Donald_Trump
+ex:Donald_Trump rdf:type owl:NamedIndividual ,
+                         ex:Person ;
+                ex:hasHandle ex:RealDonaldTrump .
+
+
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#Washington_DC
+ex:Washington_DC rdf:type owl:NamedIndividual ,
+                          ex:Location .
+
+
+###  http://www.semanticweb.org/caeleanb/ontologies/twittermap#@RealDonaldTrump
+ex:RealDonaldTrump rdf:type owl:NamedIndividual ,
+                            ex:TwitterHandle ;
+                   ex:hasLocation ex:Washington_DC .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

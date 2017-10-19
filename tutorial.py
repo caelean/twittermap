@@ -11,7 +11,7 @@ TUTORIAL_REPOSITORY = 'http://localhost:5820/tutorial'
 @app.route('/')
 def first_page():
     app.logger.debug('You arrived at ' + url_for('first_page'))
-    return render_template('index.html')
+    return render_template('index-2.html')
 
 @app.route('/show',methods=['GET'])
 def show_message():

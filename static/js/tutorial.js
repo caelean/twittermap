@@ -454,7 +454,7 @@ $('#link13').on('click', function(e){
 	// 	$('#linktarget13').html(pre);
 	// });
 
-	var endpoint = "http://maps.google.com/maps/api/geocode/json?address=Mountain+View,+CA"
+	var endpoint = "https://maps.google.com/maps/api/geocode/json?address=Mountain+View,+CA&key=AIzaSyBM8_cEr-cbYvTdCvbZT98iHQyHuzohK3g"
 	$.get(endpoint, data={}, function(json){
 		var pre = $('<pre><pre/>');
 		pre.text(JSON.stringify(json));

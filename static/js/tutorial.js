@@ -444,12 +444,19 @@ $('#link12').on('click',function(e){
 
 $('#link13').on('click', function(e){
 
-	var query = $('#query13').text();
-	var endpoint = TUTORIAL_REPOSITORY + '/query';
-	var format = 'JSON';
+	// var query = $('#query13').text();
+	// var endpoint = TUTORIAL_REPOSITORY + '/query';
+	// var format = 'JSON';
 
-	$.get('/sparql',data={'endpoint': endpoint, 'query': query, 'format': format}, function(json){
-		var pre = $('<pre></pre>');
+	// $.get('/sparql',data={'endpoint': endpoint, 'query': query, 'format': format}, function(json){
+	// 	var pre = $('<pre></pre>');
+	// 	pre.text(JSON.stringify(json));
+	// 	$('#linktarget13').html(pre);
+	// });
+
+	var endpoint = "http://maps.google.com/maps/api/geocode/json?address=Mountain+View,+CA"
+	$.get(endpoint, data={}, function(json){
+		var pre = $('<pre><pre/>');
 		pre.text(JSON.stringify(json));
 		$('#linktarget13').html(pre);
 	});

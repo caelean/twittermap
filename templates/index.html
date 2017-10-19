@@ -27,7 +27,7 @@
       #floating-panel {
         background-color: #fff;
         left: 0%;
-				top: 78%;
+				top: 70%;
 				right: 75%;
         padding: 5px;
         position: absolute;
@@ -40,12 +40,15 @@
 
   <body>
     <div id="floating-panel">
-      <button onclick="changeGradient()">Change gradient</button>
-      <button onclick="changeRadius()">Change radius</button>
-      <button onclick="changeOpacity()">Change opacity</button>
+      <button onclick="changeGradient()">gradient (debugger)</button>
+      <button onclick="changeRadius()">radius</button>
+      <button onclick="changeOpacity()">opacity</button>
 			<div id="coordinates">
 				<div>
 				North: <output id="north">
+				</div>
+				<div>
+				South: <output id="south">
 				</div>
 				<div>
 				West: <output id="west">
@@ -54,7 +57,7 @@
 				East: <output id="east">
 				</div>
 				<div>
-				South: <output id="south">
+				Points: <output id="points">
 				</div>
 			</div>
     </div>

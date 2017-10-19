@@ -3,7 +3,7 @@
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
 
-var map, heatmap, bounds, points_on_map;
+var map, heatmap, bounds, points, points_on_map;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -13,11 +13,20 @@ function initMap() {
   });
 	points = getPoints();
   heatmap = new google.maps.visualization.HeatmapLayer({
-    data: getPoints(),
+    data: points,
     map: map
   });
 	// keep live track of the coordinates
 	google.maps.event.addListener(map, "bounds_changed", function() {
+		onMapMove();
+	});
+	google.maps.event.addListener(map, 'click', function(event){
+  	//console.log( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() );
+		console.log(pointInBounds(event.latLng, bounds));
+	});
+}
+
+function onMapMove() {
 	bounds = map.getBounds().toJSON()
 	document.getElementById("north").innerHTML = bounds.north;
 	document.getElementById("west").innerHTML = bounds.west
@@ -26,21 +35,21 @@ function initMap() {
 
 	var num_points_on_map = 0
 	for(var i = 0; i < points.length; i++) {
-		point = points[i];
-		if (point.lat() <= bounds.north && point.lat() >= bounds.south) {
-			if (bounds.east > bounds.west) {
-				if (point.lng() <= bounds.east && point.lng() >= bounds.west) {
-						num_points_on_map++;
-				}
-			} else {
-				if ((point.lng() < bounds.east && point.lng() >= -180) || (point.lng() > bounds.west && point.lng() <= 180)) {
-						num_points_on_map++;
-				}
-			}
-		}
+		num_points_on_map += (pointInBounds(points[i], bounds) ? 1 : 0);
 	}
 	document.getElementById("points").innerHTML = num_points_on_map;
-	});
+	}
+
+function pointInBounds(point, bounds) {
+	if (point.lat() <= bounds.north && point.lat() >= bounds.south) {
+		if (bounds.east > bounds.west) {
+			return point.lng() <= bounds.east && point.lng() >= bounds.west;
+		} else {
+			return (point.lng() < bounds.east && point.lng() >= -180) || (point.lng() > bounds.west && point.lng() <= 180);
+		}
+
+	}
+	return false;
 }
 
 function changeGradient() {

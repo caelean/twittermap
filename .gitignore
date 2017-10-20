@@ -102,3 +102,6 @@ ENV/
 
 # Protege bullshit
 catalog-v001.xml
+
+# Shhh
+.keys.txt

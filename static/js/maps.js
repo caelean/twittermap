@@ -53,7 +53,6 @@ function pointInBounds(point, bounds) {
 }
 
 function changeGradient() {
-	debugger;
   var gradient = [
     'rgba(0, 255, 255, 0)',
     'rgba(0, 255, 255, 1)',

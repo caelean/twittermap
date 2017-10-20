@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Heatmaps</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <style>
       #map {
         height: 100%;
@@ -12,58 +13,90 @@
         margin: 0;
         padding: 0;
       }
+			select {
+    		width: 100%;
+			}
       #floating-panel {
         position: absolute;
-        top: 10px;
-        left: 25%;
+				left: 0%;
+				right: 0%;
+				bottom: 0%;
+        padding: 5px;
         z-index: 5;
         background-color: #fff;
-        padding: 5px;
-        text-align: center;
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
-        padding-left: 10px;
-      }
-      #floating-panel {
         background-color: #fff;
-        left: 0%;
-				top: 70%;
-				right: 75%;
-        padding: 5px;
         position: absolute;
-				float: left;
         z-index: 5;
 				text-align: left;
       }
+			#options {
+				display: inline-block;
+				vertical-align: top;
+				width: 30%
+			}
+			#data-display {
+				display: inline-block;
+				vertical-align: top;
+				width: 30%;
+			}
+			.empty {
+				width: 10%;
+				display: inline-block;
+			}
+			.list-group-item {
+    		padding: 5px 10px;
+				width: 100%;
+			}
     </style>
   </head>
 
   <body>
     <div id="floating-panel">
-      <button onclick="changeGradient()">gradient (debugger)</button>
-      <button onclick="changeRadius()">radius</button>
-      <button onclick="changeOpacity()">opacity</button>
-			<div id="coordinates">
-				<div>
-				North: <output id="north">
-				</div>
-				<div>
-				South: <output id="south">
-				</div>
-				<div>
-				West: <output id="west">
-				</div>
-				<div>
-				East: <output id="east">
-				</div>
-				<div>
-				Points: <output id="points">
-				</div>
+			<div class="empty"></div>
+			<div id="options">
+				<p>
+					Filter by:
+					<select class="custom-select">
+					  <option value="none">None</option>
+					  <option value="people">People</option>
+						<option value="athletes">--Athletes</option>
+					  <option value="companies">Companies</option>
+						<option value="tech">--Tech Companies</option>
+					</select>
+				</p>
+				<p>
+					Weight by:
+					<select class="custom-select">
+					  <option value="influence">Influence</option>
+					  <option value="followers">Followers</option>
+					  <option value="retweets">Retweets</option>
+					</select>
+				</p>
+				<p>
+		      <button class="btn btn-light" onclick="changeGradient()">gradient (debugger)</button>
+		      <button class="btn btn-light" onclick="changeRadius()">radius</button>
+		      <button class="btn btn-light" onclick="changeOpacity()">opacity</button>
+				</p>
+			</div>
+			<div class="empty"></div>
+			<div id="data-display">
+				<ul class="list-group">
+				  <li class="list-group-item">North: <span id="north"/></li>
+				  <li class="list-group-item">South: <span id="south"/></li>
+				  <li class="list-group-item">West: <span id="west"/></li>
+				  <li class="list-group-item">East: <span id="east"/></li>
+					<li class="list-group-item">Points: <span id="points"/></li>
+				</ul>
 			</div>
     </div>
-
     <div id="map"></div>
     <script src="../static/js/maps.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM8_cEr-cbYvTdCvbZT98iHQyHuzohK3g&libraries=visualization&callback=initMap">
     </script>

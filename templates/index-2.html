@@ -222,14 +222,9 @@ dbo:Drug owl:equivalentClass umls-semnetwork:T121 .
 			<div class='row'>
 				<div class='col-lg-6'>
 					<h3>Step 13 <small>Query for <code>rdf:type</code> relations</small></h3>
-					<p>Let's run the following query against the repository and show the results in the <code>div</code> :</p>
+					<p>Let's run the following query against the InfluenceTracker and show the results in the <code>div</code> :</p>
 					<pre id='query13' class='sparql' style='width: 100%' rows='10'>
-PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
-PREFIX dbo: &lt;http://dbpedia.org/ontology/&gt;
-
-SELECT ?x WHERE {
-  ?x a dbo:Drug .
-}
+---YOUR QUERY HERE---
 </pre>
 					<p>Click the link button to <em>GET</em> the query to our triple store. Again, we will wrap this call in a server side function <code>{{ url_for('sparql') }}</code></p>
 					<div><a id="link13" class='btn btn-primary'>link</a></div>

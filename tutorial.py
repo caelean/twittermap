@@ -6,7 +6,7 @@ import traceback
 
 app = Flask(__name__)
 
-TUTORIAL_REPOSITORY = 'http://localhost:5820/tutorial'
+TUTORIAL_REPOSITORY = 'http://localhost:5820/final_project'
 
 @app.route('/')
 def first_page():
@@ -82,20 +82,20 @@ def store():
     data = request.form['data'].encode('utf-8')
 
 
-
+    app.logger.debug(data);
 
     transaction_begin_url = TUTORIAL_REPOSITORY + "/transaction/begin"
     app.logger.debug('Doing a POST of your data to {}'.format(transaction_begin_url))
 
     # Start the transaction, and get a transaction_id
-    response = requests.post(transaction_begin_url, headers={'Accept': 'text/plain'})
+    response = requests.post(transaction_begin_url, headers={'Accept': 'text/plain', 'Authorization': 'admin:admin'})
     transaction_id = response.content
     app.logger.debug(response.status_code)
 
     # POST the data to the transaction
     post_url = TUTORIAL_REPOSITORY + "/" + transaction_id + "/add"
     app.logger.debug('Assuming your data is Turtle!!')
-    response = requests.post(post_url, data=data, headers={'Accept': 'text/plain', 'Content-type': 'text/turtle'})
+    response = requests.post(post_url, data=data, headers={'Accept': 'text/plain', 'Content-type': 'text/turtle', 'Authorization': 'admin:admin'})
     app.logger.debug(response.status_code)
     app.logger.debug(response.content)
     app.logger.debug(response.headers)

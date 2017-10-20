@@ -444,18 +444,11 @@ $('#link12').on('click',function(e){
 
 $('#link13').on('click', function(e){
 
-	// var query = $('#query13').text();
-	// var endpoint = TUTORIAL_REPOSITORY + '/query';
-	// var format = 'JSON';
+	var query = $('#query13').text();
+	var endpoint = "www.influencetracker.com:8890/sparql";
+	var format = "JSON";
 
-	// $.get('/sparql',data={'endpoint': endpoint, 'query': query, 'format': format}, function(json){
-	// 	var pre = $('<pre></pre>');
-	// 	pre.text(JSON.stringify(json));
-	// 	$('#linktarget13').html(pre);
-	// });
-
-	var endpoint = "https://maps.google.com/maps/api/geocode/json?address=Mountain+View,+CA&key=AIzaSyBM8_cEr-cbYvTdCvbZT98iHQyHuzohK3g"
-	$.get(endpoint, data={}, function(json){
+	$.get('/sparql', data={'endpoint': endpoint, 'query': query, 'format': format}, function(json){
 		var pre = $('<pre><pre/>');
 		pre.text(JSON.stringify(json));
 		$('#linktarget13').html(pre);
@@ -473,7 +466,7 @@ $('#link13').on('click', function(e){
 $('#link14').on('click', function(e){
 
 	var query = $('#query14').val();
-	var endpoint = TUTORIAL_REPOSITORY + '/query';
+	var endpoint = "http://influencetracker.com:8890/sparql";
 	var format = 'JSON';
 
 	$.get('/sparql',data={'endpoint': endpoint, 'query': query, 'format': format}, function(json){

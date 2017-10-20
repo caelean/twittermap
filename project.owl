@@ -1,320 +1,438 @@
 <?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+<rdf:RDF xmlns="http://www.semanticweb.org/caeleanb/ontologies/twittermap"
      xml:base="http://www.semanticweb.org/caeleanb/ontologies/twittermap"
+     xmlns:ex="http://www.semanticweb.org/caeleanb/ontologies/twittermap#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/caeleanb/ontologies/twittermap">
-    <Prefix name="" IRI="http://www.semanticweb.org/caeleanb/ontologies/twittermap"/>
-    <Prefix name="ex" IRI="http://www.semanticweb.org/caeleanb/ontologies/twittermap#"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Declaration>
-        <DataProperty IRI="#hasLongitude"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasHandle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#InternetCompany"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PrivateCompany"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Businessperson"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Donald_Trump"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#numFollowers"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#RetailCompany"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#SanMateo"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Athlete"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Company"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Politician"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#locInfluenceMetric"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#RealDonaldTrump"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#influenceMetric"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FinancialCompany"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#numRetweets"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasMarketCap"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Evan_Doyle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Location"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Actor"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#AutomotiveCompany"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TwitterHandle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Author"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#RealEvanDoyle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#PublicCompany"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Musician"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#residence"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasLocation"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="#hasLatitude"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Person"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="#Washington_DC"/>
-    </Declaration>
-    <EquivalentClasses>
-        <Class IRI="#TwitterHandle"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasLocation"/>
-            <Class IRI="#Location"/>
-        </ObjectExactCardinality>
-    </EquivalentClasses>
-    <SubClassOf>
-        <Class IRI="#Actor"/>
-        <Class IRI="#Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Athlete"/>
-        <Class IRI="#Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Author"/>
-        <Class IRI="#Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#AutomotiveCompany"/>
-        <Class IRI="#Company"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Businessperson"/>
-        <Class IRI="#Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Company"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasHandle"/>
-            <Class IRI="#TwitterHandle"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FinancialCompany"/>
-        <Class IRI="#Company"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#InternetCompany"/>
-        <Class IRI="#Company"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Musician"/>
-        <Class IRI="#Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Person"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#hasHandle"/>
-            <Class IRI="#TwitterHandle"/>
-        </ObjectExactCardinality>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Politician"/>
-        <Class IRI="#Person"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PrivateCompany"/>
-        <Class IRI="#Company"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#PublicCompany"/>
-        <Class IRI="#Company"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RetailCompany"/>
-        <Class IRI="#Company"/>
-    </SubClassOf>
-    <DisjointClasses>
-        <Class IRI="#PrivateCompany"/>
-        <Class IRI="#PublicCompany"/>
-    </DisjointClasses>
-    <ClassAssertion>
-        <Class IRI="#Person"/>
-        <NamedIndividual IRI="#Donald_Trump"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Person"/>
-        <NamedIndividual IRI="#Evan_Doyle"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#TwitterHandle"/>
-        <NamedIndividual IRI="#RealDonaldTrump"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#TwitterHandle"/>
-        <NamedIndividual IRI="#RealEvanDoyle"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Location"/>
-        <NamedIndividual IRI="#SanMateo"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <Class IRI="#Location"/>
-        <NamedIndividual IRI="#Washington_DC"/>
-    </ClassAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasHandle"/>
-        <NamedIndividual IRI="#Donald_Trump"/>
-        <NamedIndividual IRI="#RealDonaldTrump"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasLocation"/>
-        <NamedIndividual IRI="#Donald_Trump"/>
-        <NamedIndividual IRI="#Washington_DC"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasHandle"/>
-        <NamedIndividual IRI="#Evan_Doyle"/>
-        <NamedIndividual IRI="#RealEvanDoyle"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasLocation"/>
-        <NamedIndividual IRI="#Evan_Doyle"/>
-        <NamedIndividual IRI="#Washington_DC"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#hasLocation"/>
-        <NamedIndividual IRI="#RealDonaldTrump"/>
-        <NamedIndividual IRI="#Washington_DC"/>
-    </ObjectPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#influenceMetric"/>
-        <NamedIndividual IRI="#RealDonaldTrump"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#influenceMetric"/>
-        <NamedIndividual IRI="#RealEvanDoyle"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">100</Literal>
-    </DataPropertyAssertion>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasHandle"/>
-        <ObjectUnionOf>
-            <Class IRI="#Company"/>
-            <Class IRI="#Person"/>
-        </ObjectUnionOf>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasHandle"/>
-        <Class IRI="#TwitterHandle"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasLocation"/>
-        <Class IRI="#Location"/>
-    </ObjectPropertyRange>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasLatitude"/>
-        <Class IRI="#Location"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasLongitude"/>
-        <Class IRI="#Location"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#hasMarketCap"/>
-        <Class IRI="#Company"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#influenceMetric"/>
-        <Class IRI="#TwitterHandle"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#numFollowers"/>
-        <Class IRI="#TwitterHandle"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#numRetweets"/>
-        <Class IRI="#TwitterHandle"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#residence"/>
-        <Class IRI="#Person"/>
-    </DataPropertyDomain>
-    <DLSafeRule>
-        <Body>
-            <ClassAtom>
-                <Class IRI="#Person"/>
-                <Variable IRI="urn:swrl#p"/>
-            </ClassAtom>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#hasLocation"/>
-                <Variable IRI="urn:swrl#p"/>
-                <Variable IRI="urn:swrl#y"/>
-            </ObjectPropertyAtom>
-            <ObjectPropertyAtom>
-                <ObjectProperty IRI="#hasHandle"/>
-                <Variable IRI="urn:swrl#p"/>
-                <Variable IRI="urn:swrl#t"/>
-            </ObjectPropertyAtom>
-            <DataPropertyAtom>
-                <DataProperty IRI="#influenceMetric"/>
-                <Variable IRI="urn:swrl#t"/>
-                <Variable IRI="urn:swrl#x"/>
-            </DataPropertyAtom>
-        </Body>
-        <Head>
-            <DataPropertyAtom>
-                <DataProperty IRI="#locInfluenceMetric"/>
-                <Variable IRI="urn:swrl#y"/>
-                <Variable IRI="urn:swrl#x"/>
-            </DataPropertyAtom>
-        </Head>
-    </DLSafeRule>
-</Ontology>
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasHandle -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasHandle">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLocation">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLatitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLatitude">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLongitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLongitude">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasMarketCap -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasMarketCap">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#influenceMetric -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#influenceMetric">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#locInfluenceMetric -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#locInfluenceMetric"/>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#numFollowers -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#numFollowers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#numRetweets -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#numRetweets">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#residence -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#residence">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Actor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Athlete -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Athlete">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Author -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Author">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#AutomotiveCompany -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#AutomotiveCompany">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Businessperson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Businessperson">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasHandle"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#FinancialCompany -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#FinancialCompany">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#InternetCompany -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#InternetCompany">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Musician -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Musician">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasHandle"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Politician -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Politician">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#PrivateCompany -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#PrivateCompany">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#PublicCompany"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#PublicCompany -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#PublicCompany">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#RetailCompany -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#RetailCompany">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLocation"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Donald_Trump -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Donald_Trump">
+        <rdf:type rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+        <ex:hasHandle rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#RealDonaldTrump"/>
+        <ex:hasLocation rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Washington_DC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Evan_Doyle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Evan_Doyle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+        <ex:hasHandle rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#RealEvanDoyle"/>
+        <ex:hasLocation rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Washington_DC"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#RealDonaldTrump -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#RealDonaldTrump">
+        <rdf:type rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+        <ex:hasLocation rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Washington_DC"/>
+        <ex:influenceMetric rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</ex:influenceMetric>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#RealEvanDoyle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#RealEvanDoyle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+        <ex:influenceMetric rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</ex:influenceMetric>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#SanMateo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#SanMateo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Washington_DC -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Washington_DC">
+        <rdf:type rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLocation"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#p"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasHandle"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#p"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#influenceMetric"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl#x"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#locInfluenceMetric"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
 
 
 

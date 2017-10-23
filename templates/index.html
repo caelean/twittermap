@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <style>
       #map {
-        height: 100%;
+				height: calc(100% - 170px);
       }
       html, body {
         height: 100%;
@@ -17,24 +17,23 @@
     		width: 100%;
 			}
       #floating-panel {
-        position: absolute;
+				position: fixed;
+				height: 170px;
 				left: 0%;
 				right: 0%;
 				bottom: 0%;
         padding: 5px;
-        z-index: 5;
-        background-color: #fff;
 				font-family: "Courier New", Courier, monospace;
-        line-height: 30px;
+				font-size: 14px;
+        line-height: 20px;
         background-color: #fff;
-        position: absolute;
         z-index: 5;
 				text-align: left;
       }
 			#options {
 				display: inline-block;
 				vertical-align: top;
-				width: 30%
+				width: 30%;
 			}
 			#data-display {
 				display: inline-block;
@@ -46,20 +45,26 @@
 				display: inline-block;
 			}
 			.list-group-item {
-    		padding: 5px 10px;
+    		padding: 5px 5px;
 				width: 100%;
 			}
 			.btn {
-				width: 23%;
+				padding: 3px 5px;
+				width: 23.3%;
+				font-size: 14px;
+			}
+			.custom-select {
+				height: 30px;
 			}
     </style>
   </head>
 
   <body>
+		<div id="map"></div>
     <div id="floating-panel">
 			<div class="empty"></div>
 			<div id="options">
-				<p>
+				<div>
 					Filter by:
 					<select class="custom-select">
 					  <option value="none">None</option>
@@ -68,21 +73,22 @@
 					  <option value="companies">Companies</option>
 						<option value="tech">--Tech Companies</option>
 					</select>
-				</p>
-				<p>
+				</div>
+				<div>
 					Weight by:
 					<select class="custom-select">
 					  <option value="influence">Influence</option>
 					  <option value="followers">Followers</option>
 					  <option value="retweets">Retweets</option>
 					</select>
-				</p>
-				<p>
+				</div>
+				<br>
+				<div>
 		      <button class="btn btn-light" onclick="changeGradient()">gradient</button>
 		      <button class="btn btn-light" onclick="changeRadius()">radius</button>
 		      <button class="btn btn-light" onclick="changeOpacity()">opacity</button>
 					<button class="btn btn-light" onclick="debugger;">debug</button>
-				</p>
+				</div>
 			</div>
 			<div class="empty"></div>
 			<div id="data-display">
@@ -95,7 +101,6 @@
 				</ul>
 			</div>
     </div>
-    <div id="map"></div>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>

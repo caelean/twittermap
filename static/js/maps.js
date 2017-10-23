@@ -91,7 +91,7 @@ function changeGradient() {
 }
 
 function changeRadius() {
-  heatmap.set('radius', heatmap.get('radius') ? null : 20);
+  heatmap.set('radius', heatmap.get('radius') ? null : 100);
 }
 
 function changeOpacity() {
@@ -100,10 +100,11 @@ function changeOpacity() {
 
 function getPoints() {
 	pts = []
-	for(var i = 0; i < 1000; i++) {
+	for(var i = 0; i < 2000; i++) {
 		var lat = (Math.random() * 160) - 80;
 		var long = (Math.random() * 360) - 180;
-		var point = new google.maps.LatLng(lat, long)
+		var weight = Math.random() * 200;
+		var point = {location: new google.maps.LatLng(lat, long), weight: weight}
 		pts.push(point);
 	}
 	return pts;

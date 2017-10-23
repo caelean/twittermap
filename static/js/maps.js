@@ -7,22 +7,20 @@ var map, heatmap, bounds, points, points_on_map;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 13,
-    center: {lat: 37.775, lng: -122.434},
-    mapTypeId: 'satellite'
+    center: {lat: 37.775, lng: -122.434}, // San Fran
+		zoom: 5,
+		minZoom: 1,
+    mapTypeId: 'satellite',
+		streetViewControl: false,
   });
 	points = getPoints();
   heatmap = new google.maps.visualization.HeatmapLayer({
     data: points,
-    map: map
+    map: map,
   });
 	// keep live track of the coordinates
 	google.maps.event.addListener(map, "bounds_changed", function() {
 		onMapMove();
-	});
-	google.maps.event.addListener(map, 'click', function(event){
-  	//console.log( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() );
-		console.log(pointInBounds(event.latLng, bounds));
 	});
 }
 
@@ -35,12 +33,13 @@ function onMapMove() {
 
 	var num_points_on_map = 0
 	for(var i = 0; i < points.length; i++) {
-		num_points_on_map += (pointInBounds(points[i], bounds) ? 1 : 0);
+		num_points_on_map += (pointInBounds(points[i].location, bounds) ? 1 : 0);
 	}
 	document.getElementById("points").innerHTML = num_points_on_map;
-	}
+}
 
 function pointInBounds(point, bounds) {
+
 	if (point.lat() <= bounds.north && point.lat() >= bounds.south) {
 		if (bounds.east > bounds.west) {
 			return point.lng() <= bounds.east && point.lng() >= bounds.west;

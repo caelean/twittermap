@@ -52,6 +52,24 @@ function pointInBounds(point, bounds) {
 	return false;
 }
 
+$("#search").on('keyup', function(e){
+    if(e.keyCode == 13){
+			var query = $("#search").val().replace(' ', '+');
+			var key = "&key=AIzaSyCZBUXlJTya934fLCVMwtZZ_UfyYpyx6_8"
+			var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + query + key
+			$.get(
+				url,
+			 	function(data, status){
+							var bounds = new google.maps.LatLngBounds();
+							bounds.extend(data.results[0]['geometry']['viewport']['northeast'])
+							bounds.extend(data.results[0]['geometry']['viewport']['southwest'])
+							map.fitBounds(bounds);
+							map.setCenter(data.results[0]['geometry']['location']);
+				}
+			);
+    }
+});
+
 function changeGradient() {
   var gradient = [
     'rgba(0, 255, 255, 0)',

@@ -37,7 +37,7 @@
 			.panel-box {
 				display: inline-block;
 				vertical-align: top;
-				width: 24%;
+				width: 24.4%;
 			}
 			.list-group-item {
     		padding: 5px 5px;
@@ -51,16 +51,22 @@
 			.custom-select {
 				height: 30px;
 			}
+			.form-control {
+				padding: 2px 5px;
+				font-size: 14px;
+
+			}
     </style>
   </head>
 
   <body>
 		<div id="map"></div>
     <div id="floating-panel">
-			<div id="search" class="panel-box">
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search for a location">
-				</div>
+			<div class="panel-box">
+				Search for a location:
+					<div class="input-group">
+						<input id="search" type="text" class="form-control">
+					</div>
 			</div>
 			<div id="options" class="panel-box">
 				<div>
@@ -83,7 +89,7 @@
 				</div>
 				<br>
 				<div>
-		      <button class="btn btn-light" onclick="changeGradient()">gradient</button>
+		      <button class="btn btn-light" onclick="changeGradient()">grad</button>
 		      <button class="btn btn-light" onclick="changeRadius()">radius</button>
 		      <button class="btn btn-light" onclick="changeOpacity()">opacity</button>
 					<button class="btn btn-light" onclick="debugger;">debug</button>

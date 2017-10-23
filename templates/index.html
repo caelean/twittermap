@@ -16,6 +16,18 @@
       #map {
 				height: calc(100% - 170px);
       }
+			#collapse-button {
+				position: absolute;
+				top: 10px;
+				left: 114px;
+				z-index: 99;
+				border-bottom-left-radius: 2px;
+				border-top-left-radius: 2px;
+				width: 100px;
+				height: 29px;
+				font-size: 11px;
+ font-family: "Roboto", Arial, sans-serif;
+			}
       #floating-panel {
 				position: fixed;
 				height: 170px;
@@ -60,8 +72,11 @@
   </head>
 
   <body>
+		<button id="collapse-button" class="btn btn-light" onclick="extendMap()" data-toggle="collapse" data-target="#floating-panel" aria-expanded="false" aria-controls="floating-panel">
+			Hide controls
+		</button>
 		<div id="map"></div>
-    <div id="floating-panel">
+    <div id="floating-panel" class="collapse show">
 			<div class="panel-box">
 				Search for a location:
 					<div class="input-group">

@@ -24,6 +24,19 @@ function initMap() {
 	});
 }
 
+function extendMap() {
+	if ($("#collapse-button").text	().indexOf('Show') > -1) {
+		$("#collapse-button").text("Hide controls");
+		$('#map').css('height', 'calc(100% - 170px)');
+	} else {
+		$("#collapse-button").text('Show controls');
+		$('#map').css('height', '100%');
+	}
+	var e = document.createEvent('UIEvents');
+	e.initUIEvent('resize', true, false, window, 0);
+	window.dispatchEvent(e);
+}
+
 function onMapMove() {
 	bounds = map.getBounds().toJSON()
 	document.getElementById("north").innerHTML = bounds.north;

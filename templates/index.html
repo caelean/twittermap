@@ -5,17 +5,17 @@
     <title>Heatmaps</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <style>
+			html, body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			select {
+				width: 100%;
+			}
       #map {
 				height: calc(100% - 170px);
       }
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-			select {
-    		width: 100%;
-			}
       #floating-panel {
 				position: fixed;
 				height: 170px;
@@ -30,27 +30,22 @@
         z-index: 5;
 				text-align: left;
       }
-			#options {
+			#info {
+				font-size: 28px;
+				text-align: right;
+			}
+			.panel-box {
 				display: inline-block;
 				vertical-align: top;
-				width: 30%;
-			}
-			#data-display {
-				display: inline-block;
-				vertical-align: top;
-				width: 30%;
-			}
-			.empty {
-				width: 10%;
-				display: inline-block;
+				width: 24%;
 			}
 			.list-group-item {
     		padding: 5px 5px;
 				width: 100%;
 			}
 			.btn {
-				padding: 3px 5px;
-				width: 23.3%;
+				padding: 5px 5px;
+				width: 22%;
 				font-size: 14px;
 			}
 			.custom-select {
@@ -62,8 +57,12 @@
   <body>
 		<div id="map"></div>
     <div id="floating-panel">
-			<div class="empty"></div>
-			<div id="options">
+			<div id="search" class="panel-box">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Search for a location">
+				</div>
+			</div>
+			<div id="options" class="panel-box">
 				<div>
 					Filter by:
 					<select class="custom-select">
@@ -90,8 +89,7 @@
 					<button class="btn btn-light" onclick="debugger;">debug</button>
 				</div>
 			</div>
-			<div class="empty"></div>
-			<div id="data-display">
+			<div id="data-display" class="panel-box">
 				<ul class="list-group">
 				  <li class="list-group-item">North: <span id="north"/></li>
 				  <li class="list-group-item">South: <span id="south"/></li>
@@ -99,6 +97,12 @@
 				  <li class="list-group-item">East: <span id="east"/></li>
 					<li class="list-group-item">Points: <span id="points"/></li>
 				</ul>
+			</div>
+			<div id="info" class="panel-box">
+				Twittermap<br><br>
+				Caelean Barnes<br>&<br>
+				Evan Doyle<br><br>
+				<span style="font-size:14px;">Dynamically view the influence of twitter users based on location</span>
 			</div>
     </div>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

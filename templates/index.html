@@ -4,70 +4,8 @@
     <meta charset="utf-8">
     <title>Heatmaps</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<link href="../static/css/css.css" rel="stylesheet" type="text/css">
     <style>
-			html, body {
-				height: 100%;
-				margin: 0;
-				padding: 0;
-			}
-			select {
-				width: 100%;
-			}
-      #map {
-				height: calc(100% - 170px);
-      }
-			#collapse-button {
-				position: absolute;
-				top: 10px;
-				left: 114px;
-				z-index: 99;
-				border-bottom-left-radius: 2px;
-				border-top-left-radius: 2px;
-				width: 100px;
-				height: 29px;
-				font-size: 11px;
- font-family: "Roboto", Arial, sans-serif;
-			}
-      #floating-panel {
-				position: fixed;
-				height: 170px;
-				left: 0%;
-				right: 0%;
-				bottom: 0%;
-        padding: 5px;
-				font-family: "Courier New", Courier, monospace;
-				font-size: 14px;
-        line-height: 20px;
-        background-color: #fff;
-        z-index: 5;
-				text-align: left;
-      }
-			#info {
-				font-size: 28px;
-				text-align: right;
-			}
-			.panel-box {
-				display: inline-block;
-				vertical-align: top;
-				width: 24.4%;
-			}
-			.list-group-item {
-    		padding: 5px 5px;
-				width: 100%;
-			}
-			.btn {
-				padding: 5px 5px;
-				width: 22%;
-				font-size: 14px;
-			}
-			.custom-select {
-				height: 30px;
-			}
-			.form-control {
-				padding: 2px 5px;
-				font-size: 14px;
-
-			}
     </style>
   </head>
 
@@ -130,9 +68,13 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 		<script src="../static/js/jquery-1.11.0.min.js"></script>
+		<script src="../static/js/style.js"></script>
     <script src="../static/js/maps.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM8_cEr-cbYvTdCvbZT98iHQyHuzohK3g&libraries=visualization&callback=initMap">
     </script>
+		<!-- <script async defer
+        src="https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyBM8_cEr-cbYvTdCvbZT98iHQyHuzohK3g&center=-33.79521214769197,150.955679321289&zoom=13&format=png&maptype=roadmap&style=element:geometry%7Ccolor:0x1d2c4d&style=element:labels%7Cvisibility:off&style=element:labels.text.fill%7Ccolor:0x8ec3b9&style=element:labels.text.stroke%7Ccolor:0x1a3646&style=feature:administrative%7Celement:geometry%7Cvisibility:off&style=feature:administrative.country%7Celement:geometry.stroke%7Ccolor:0x4b6878&style=feature:administrative.land_parcel%7Cvisibility:off&style=feature:administrative.land_parcel%7Celement:labels.text.fill%7Ccolor:0x64779e&style=feature:administrative.neighborhood%7Cvisibility:off&style=feature:administrative.province%7Celement:geometry.stroke%7Ccolor:0x4b6878&style=feature:landscape.man_made%7Celement:geometry.stroke%7Ccolor:0x334e87&style=feature:landscape.natural%7Celement:geometry%7Ccolor:0x023e58&style=feature:poi%7Cvisibility:off&style=feature:poi%7Celement:geometry%7Ccolor:0x283d6a&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0x6f9ba5&style=feature:poi%7Celement:labels.text.stroke%7Ccolor:0x1d2c4d&style=feature:poi.park%7Celement:geometry.fill%7Ccolor:0x023e58&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x3C7680&style=feature:road%7Celement:geometry%7Ccolor:0x304a7d&style=feature:road%7Celement:labels.icon%7Cvisibility:off&style=feature:road%7Celement:labels.text.fill%7Ccolor:0x98a5be&style=feature:road%7Celement:labels.text.stroke%7Ccolor:0x1d2c4d&style=feature:road.highway%7Celement:geometry%7Ccolor:0x2c6675&style=feature:road.highway%7Celement:geometry.stroke%7Ccolor:0x255763&style=feature:road.highway%7Celement:labels.text.fill%7Ccolor:0xb0d5ce&style=feature:road.highway%7Celement:labels.text.stroke%7Ccolor:0x023e58&style=feature:transit%7Cvisibility:off&style=feature:transit%7Celement:labels.text.fill%7Ccolor:0x98a5be&style=feature:transit%7Celement:labels.text.stroke%7Ccolor:0x1d2c4d&style=feature:transit.line%7Celement:geometry.fill%7Ccolor:0x283d6a&style=feature:transit.station%7Celement:geometry%7Ccolor:0x3a4762&style=feature:water%7Celement:geometry%7Ccolor:0x0e1626&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x4e6d70&size=480x360">
+		</script> -->
   </body>
 </html>

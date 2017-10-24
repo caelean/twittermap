@@ -1,0 +1,18 @@
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dbpedia.org/resource/Andrew_Ng> a ns2:Scientist ;
+    ns2:label "Andrew Ng"@en .
+
+<http://dbpedia.org/resource/Bill_Nye> a ns2:Scientist ;
+    ns2:label "Bill Nye"@en .
+
+<http://dbpedia.org/resource/Richard_Dawkins> a ns2:Scientist ;
+    ns2:label "Richard Dawkins"@en .
+
+<http://dbpedia.org/resource/Tim_Berners-Lee> a ns2:Scientist ;
+    ns2:label "Tim Berners-Lee"@en .
+

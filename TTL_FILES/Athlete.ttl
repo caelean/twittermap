@@ -1,0 +1,99 @@
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dbpedia.org/resource/Aaron_Carpenter> a ns2:Athlete ;
+    ns2:label "Aaron Carpenter"@en .
+
+<http://dbpedia.org/resource/Ali_Al-Habsi> a ns2:Athlete ;
+    ns2:label "Ali Al-Habsi"@en .
+
+<http://dbpedia.org/resource/Antonio_Esfandiari> a ns2:Athlete ;
+    ns2:label "Antonio Esfandiari"@en .
+
+<http://dbpedia.org/resource/Chris_Arkwright> a ns2:Athlete ;
+    ns2:label "Chris Arkwright"@en .
+
+<http://dbpedia.org/resource/Colton_Smith> a ns2:Athlete ;
+    ns2:label "Colton Smith"@en .
+
+<http://dbpedia.org/resource/Cristiano_Ronaldo> a ns2:Athlete ;
+    ns2:label "Cristiano Ronaldo"@en .
+
+<http://dbpedia.org/resource/Danny_Sullivan> a ns2:Athlete ;
+    ns2:label "Danny Sullivan"@en .
+
+<http://dbpedia.org/resource/Dave_Ewart> a ns2:Athlete ;
+    ns2:label "Dave Ewart"@en .
+
+<http://dbpedia.org/resource/Fernando_Alonso> a ns2:Athlete ;
+    ns2:label "Fernando Alonso"@en .
+
+<http://dbpedia.org/resource/Francesco_Totti> a ns2:Athlete ;
+    ns2:label "Francesco Totti"@en .
+
+<http://dbpedia.org/resource/Frank_Wade> a ns2:Athlete ;
+    ns2:label "Frank Wade"@en .
+
+<http://dbpedia.org/resource/Gary_Lineker> a ns2:Athlete ;
+    ns2:label "Gary Lineker"@en .
+
+<http://dbpedia.org/resource/Giorgos_Papandreou> a ns2:Athlete ;
+    ns2:label "Giorgos Papandreou"@en .
+
+<http://dbpedia.org/resource/Hideaki_Takeda> a ns2:Athlete ;
+    ns2:label "Hideaki Takeda"@en .
+
+<http://dbpedia.org/resource/Ian_Rose> a ns2:Athlete ;
+    ns2:label "Ian Rose"@en .
+
+<http://dbpedia.org/resource/Jim_Winn> a ns2:Athlete ;
+    ns2:label "Jim Winn"@en .
+
+<http://dbpedia.org/resource/John_Ramos> a ns2:Athlete ;
+    ns2:label "John Ramos"@en .
+
+<http://dbpedia.org/resource/Kobe_Bryant> a ns2:Athlete ;
+    ns2:label "Kobe Bryant"@en .
+
+<http://dbpedia.org/resource/LeBron_James> a ns2:Athlete ;
+    ns2:label "LeBron James"@en .
+
+<http://dbpedia.org/resource/Luca_Rizzo> a ns2:Athlete ;
+    ns2:label "Luca Rizzo"@en .
+
+<http://dbpedia.org/resource/Novak_Djokovic> a ns2:Athlete ;
+    ns2:label "Novak Djokovic"@en .
+
+<http://dbpedia.org/resource/Paul_Skidmore> a ns2:Athlete ;
+    ns2:label "Paul Skidmore"@en .
+
+<http://dbpedia.org/resource/Samoa_Joe> a ns2:Athlete ;
+    ns2:label "Samoa Joe"@en .
+
+<http://dbpedia.org/resource/Seth_Rollins> a ns2:Athlete ;
+    ns2:label "Seth Rollins"@en .
+
+<http://dbpedia.org/resource/Shashank_Singh> a ns2:Athlete ;
+    ns2:label "Shashank Singh"@en .
+
+<http://dbpedia.org/resource/Suresh_Raina> a ns2:Athlete ;
+    ns2:label "Suresh Raina"@en .
+
+<http://dbpedia.org/resource/Valentino_Rossi> a ns2:Athlete ;
+    ns2:label "Valentino Rossi"@en .
+
+<http://dbpedia.org/resource/Virat_Kohli> a ns2:Athlete ;
+    ns2:label "Virat Kohli"@en .
+
+<http://dbpedia.org/resource/Virender_Sehwag> a ns2:Athlete ;
+    ns2:label "Virender Sehwag"@en .
+
+<http://dbpedia.org/resource/Wayne_Rooney> a ns2:Athlete ;
+    ns2:label "Wayne Rooney"@en .
+
+<http://dbpedia.org/resource/Zafar_Mahmood> a ns2:Athlete ;
+    ns2:label "Zafar Mahmood"@en .
+

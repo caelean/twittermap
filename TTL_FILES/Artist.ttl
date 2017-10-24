@@ -1,0 +1,84 @@
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dbpedia.org/resource/Abhijeet_Sawant> a ns2:Artist ;
+    ns2:label "Abhijeet Sawant"@en .
+
+<http://dbpedia.org/resource/Anu_Malik> a ns2:Artist ;
+    ns2:label "Anu Malik"@en .
+
+<http://dbpedia.org/resource/Anushka_Manchanda> a ns2:Artist ;
+    ns2:label "Anushka Manchanda"@en .
+
+<http://dbpedia.org/resource/Atif_Aslam> a ns2:Artist ;
+    ns2:label "Atif Aslam"@en .
+
+<http://dbpedia.org/resource/Boy_George> a ns2:Artist ;
+    ns2:label "Boy George"@en .
+
+<http://dbpedia.org/resource/Bryan_Lee> a ns2:Artist ;
+    ns2:label "Bryan Lee"@en .
+
+<http://dbpedia.org/resource/Chris_Brown> a ns2:Artist ;
+    ns2:label "Chris Brown"@en .
+
+<http://dbpedia.org/resource/Chris_Cornell> a ns2:Artist ;
+    ns2:label "Chris Cornell"@en .
+
+<http://dbpedia.org/resource/Conan_O'Brien> a ns2:Artist ;
+    ns2:label "Conan O'Brien"@en .
+
+<http://dbpedia.org/resource/David_Guetta> a ns2:Artist ;
+    ns2:label "David Guetta"@en .
+
+<http://dbpedia.org/resource/Ellen_DeGeneres> a ns2:Artist ;
+    ns2:label "Ellen DeGeneres"@en .
+
+<http://dbpedia.org/resource/Jeffrey_Lewis> a ns2:Artist ;
+    ns2:label "Jeffrey Lewis"@en .
+
+<http://dbpedia.org/resource/Jim_Lee> a ns2:Artist ;
+    ns2:label "Jim Lee"@en .
+
+<http://dbpedia.org/resource/Jimmy_Kimmel> a ns2:Artist ;
+    ns2:label "Jimmy Kimmel"@en .
+
+<http://dbpedia.org/resource/Johnny_Marr> a ns2:Artist ;
+    ns2:label "Johnny Marr"@en .
+
+<http://dbpedia.org/resource/Justin_Guarini> a ns2:Artist ;
+    ns2:label "Justin Guarini"@en .
+
+<http://dbpedia.org/resource/Marco_Mengoni> a ns2:Artist ;
+    ns2:label "Marco Mengoni"@en .
+
+<http://dbpedia.org/resource/Meghan_Trainor> a ns2:Artist ;
+    ns2:label "Meghan Trainor"@en .
+
+<http://dbpedia.org/resource/Natalia_Germanou> a ns2:Artist ;
+    ns2:label "Natalia Germanou"@en .
+
+<http://dbpedia.org/resource/Niall_Horan> a ns2:Artist ;
+    ns2:label "Niall Horan"@en .
+
+<http://dbpedia.org/resource/Nicole_Miller> a ns2:Artist ;
+    ns2:label "Nicole Miller"@en .
+
+<http://dbpedia.org/resource/Patton_Oswalt> a ns2:Artist ;
+    ns2:label "Patton Oswalt"@en .
+
+<http://dbpedia.org/resource/Raghav> a ns2:Artist ;
+    ns2:label "Raghav"@en .
+
+<http://dbpedia.org/resource/Shirley_Setia> a ns2:Artist ;
+    ns2:label "Shirley Setia"@en .
+
+<http://dbpedia.org/resource/Wilde_Oscar> a ns2:Artist ;
+    ns2:label "Wilde Oscar"@en .
+
+<http://dbpedia.org/resource/Yann_Tiersen> a ns2:Artist ;
+    ns2:label "Yann Tiersen"@en .
+

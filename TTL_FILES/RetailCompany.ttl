@@ -1,0 +1,12 @@
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dbpedia.org/resource/Drizly> a ns2:RetailCompany ;
+    ns2:label "Drizly"@en .
+
+<http://dbpedia.org/resource/Tesco> a ns2:RetailCompany ;
+    ns2:label "Tesco"@en .
+

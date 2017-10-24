@@ -1,0 +1,99 @@
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dbpedia.org/resource/Abhijeet_Sawant> a ns2:Musician ;
+    ns2:label "Abhijeet Sawant"@en .
+
+<http://dbpedia.org/resource/Alicia_Keys> a ns2:Musician ;
+    ns2:label "Alicia Keys"@en .
+
+<http://dbpedia.org/resource/Anu_Malik> a ns2:Musician ;
+    ns2:label "Anu Malik"@en .
+
+<http://dbpedia.org/resource/Anushka_Manchanda> a ns2:Musician ;
+    ns2:label "Anushka Manchanda"@en .
+
+<http://dbpedia.org/resource/Ariana_Grande> a ns2:Musician ;
+    ns2:label "Ariana Grande"@en .
+
+<http://dbpedia.org/resource/Atif_Aslam> a ns2:Musician ;
+    ns2:label "Atif Aslam"@en .
+
+<http://dbpedia.org/resource/Boy_George> a ns2:Musician ;
+    ns2:label "Boy George"@en .
+
+<http://dbpedia.org/resource/Britney_Spears> a ns2:Musician ;
+    ns2:label "Britney Spears"@en .
+
+<http://dbpedia.org/resource/Bruno_Mars> a ns2:Musician ;
+    ns2:label "Bruno Mars"@en .
+
+<http://dbpedia.org/resource/Bryan_Lee> a ns2:Musician ;
+    ns2:label "Bryan Lee"@en .
+
+<http://dbpedia.org/resource/Chris_Brown> a ns2:Musician ;
+    ns2:label "Chris Brown"@en .
+
+<http://dbpedia.org/resource/Chris_Cornell> a ns2:Musician ;
+    ns2:label "Chris Cornell"@en .
+
+<http://dbpedia.org/resource/David_Guetta> a ns2:Musician ;
+    ns2:label "David Guetta"@en .
+
+<http://dbpedia.org/resource/Demi_Lovato> a ns2:Musician ;
+    ns2:label "Demi Lovato"@en .
+
+<http://dbpedia.org/resource/Jeffrey_Lewis> a ns2:Musician ;
+    ns2:label "Jeffrey Lewis"@en .
+
+<http://dbpedia.org/resource/Johnny_Marr> a ns2:Musician ;
+    ns2:label "Johnny Marr"@en .
+
+<http://dbpedia.org/resource/Justin_Bieber> a ns2:Musician ;
+    ns2:label "Justin Bieber"@en .
+
+<http://dbpedia.org/resource/Justin_Guarini> a ns2:Musician ;
+    ns2:label "Justin Guarini"@en .
+
+<http://dbpedia.org/resource/Justin_Timberlake> a ns2:Musician ;
+    ns2:label "Justin Timberlake"@en .
+
+<http://dbpedia.org/resource/Marco_Mengoni> a ns2:Musician ;
+    ns2:label "Marco Mengoni"@en .
+
+<http://dbpedia.org/resource/Mariah_Carey> a ns2:Musician ;
+    ns2:label "Mariah Carey"@en .
+
+<http://dbpedia.org/resource/Meghan_Trainor> a ns2:Musician ;
+    ns2:label "Meghan Trainor"@en .
+
+<http://dbpedia.org/resource/Natalia_Germanou> a ns2:Musician ;
+    ns2:label "Natalia Germanou"@en .
+
+<http://dbpedia.org/resource/Niall_Horan> a ns2:Musician ;
+    ns2:label "Niall Horan"@en .
+
+<http://dbpedia.org/resource/Peter_Rosenberg> a ns2:Musician ;
+    ns2:label "Peter Rosenberg"@en .
+
+<http://dbpedia.org/resource/Raghav> a ns2:Musician ;
+    ns2:label "Raghav"@en .
+
+<http://dbpedia.org/resource/Rihanna> a ns2:Musician ;
+    ns2:label "Rihanna"@en .
+
+<http://dbpedia.org/resource/Selena_Gomez> a ns2:Musician ;
+    ns2:label "Selena Gomez"@en .
+
+<http://dbpedia.org/resource/Shakira> a ns2:Musician ;
+    ns2:label "Shakira"@en .
+
+<http://dbpedia.org/resource/Shirley_Setia> a ns2:Musician ;
+    ns2:label "Shirley Setia"@en .
+
+<http://dbpedia.org/resource/Yann_Tiersen> a ns2:Musician ;
+    ns2:label "Yann Tiersen"@en .
+

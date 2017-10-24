@@ -1,0 +1,14 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dby: <http://dbpedia.org/class/yago/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+ns2:Los%20Angeles%2C%20CA a ns2:Location .
+
+<http://www.influencetracker.com/resource/User/brunomars> ns2:hasLocation ns2:Los%20Angeles%2C%20CA .
+
+ns2:Los%20Angeles%2C%20CA ns2:hasLatitude "34.052235"^^<http://www.w3.org/2001/XMLSchema#float> ;
+	ns2:hasLongitude "-118.24368"^^<http://www.w3.org/2001/XMLSchema#float> .

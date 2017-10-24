@@ -1,0 +1,14 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dby: <http://dbpedia.org/class/yago/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+ns2:Civitella%20del%20Tronto a ns2:Location .
+
+<http://www.influencetracker.com/resource/User/maurizioneri79> ns2:hasLocation ns2:Civitella%20del%20Tronto .
+
+ns2:Civitella%20del%20Tronto ns2:hasLatitude "42.773052"^^<http://www.w3.org/2001/XMLSchema#float> ;
+	ns2:hasLongitude "13.676165"^^<http://www.w3.org/2001/XMLSchema#float> .

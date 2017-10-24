@@ -1,0 +1,18 @@
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dbpedia.org/resource/Audi> a ns2:AutomotiveCompany ;
+    ns2:label "Audi"@en .
+
+<http://dbpedia.org/resource/Chevrolet> a ns2:AutomotiveCompany ;
+    ns2:label "Chevrolet"@en .
+
+<http://dbpedia.org/resource/Ford_Motor_Company> a ns2:AutomotiveCompany ;
+    ns2:label "Ford Motor Company"@en .
+
+<http://dbpedia.org/resource/General_Motors> a ns2:AutomotiveCompany ;
+    ns2:label "General Motors"@en .
+

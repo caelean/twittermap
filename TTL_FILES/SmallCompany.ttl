@@ -1,0 +1,33 @@
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dbpedia.org/resource/3i> a ns2:SmallCompany ;
+    ns2:label "3i"@en .
+
+<http://dbpedia.org/resource/Coursera> a ns2:SmallCompany ;
+    ns2:label "Coursera"@en .
+
+<http://dbpedia.org/resource/DonorsChoose> a ns2:SmallCompany ;
+    ns2:label "DonorsChoose"@en .
+
+<http://dbpedia.org/resource/EYDAP> a ns2:SmallCompany ;
+    ns2:label "EYDAP"@en .
+
+<http://dbpedia.org/resource/Forthnet> a ns2:SmallCompany ;
+    ns2:label "Forthnet"@en .
+
+<http://dbpedia.org/resource/Klout> a ns2:SmallCompany ;
+    ns2:label "Klout"@en .
+
+<http://dbpedia.org/resource/Marvel_Entertainment> a ns2:SmallCompany ;
+    ns2:label "Marvel Entertainment"@en .
+
+<http://dbpedia.org/resource/Pinterest> a ns2:SmallCompany ;
+    ns2:label "Pinterest"@en .
+
+<http://dbpedia.org/resource/Zen_Internet> a ns2:SmallCompany ;
+    ns2:label "Zen Internet"@en .
+

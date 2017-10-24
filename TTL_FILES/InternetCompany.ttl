@@ -1,0 +1,21 @@
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dbpedia.org/resource/Facebook> a ns2:InternetCompany ;
+    ns2:label "Facebook"@en .
+
+<http://dbpedia.org/resource/Google> a ns2:InternetCompany ;
+    ns2:label "Google"@en .
+
+<http://dbpedia.org/resource/Twitter> a ns2:InternetCompany ;
+    ns2:label "Twitter"@en .
+
+<http://dbpedia.org/resource/YouTube> a ns2:InternetCompany ;
+    ns2:label "YouTube"@en .
+
+<http://dbpedia.org/resource/Zen_Internet> a ns2:InternetCompany ;
+    ns2:label "Zen Internet"@en .
+

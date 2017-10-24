@@ -1,0 +1,12 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix dby: <http://dbpedia.org/class/yago/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<http://www.influencetracker.com/resource/User/israelipm> ns2:hasLocation ns2:Jerusalem%2C%20Israel .
+
+ns2:Jerusalem%2C%20Israel ns2:hasLatitude "31.768318"^^<http://www.w3.org/2001/XMLSchema#float> ;
+	ns2:hasLongitude "35.21371"^^<http://www.w3.org/2001/XMLSchema#float> .

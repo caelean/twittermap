@@ -1,0 +1,36 @@
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dbpedia.org/resource/Barack_Obama> a ns2:Politician ;
+    ns2:label "Barack Obama"@en .
+
+<http://dbpedia.org/resource/Bill_Clinton> a ns2:Politician ;
+    ns2:label "Bill Clinton"@en .
+
+<http://dbpedia.org/resource/Bill_Flores> a ns2:Politician ;
+    ns2:label "Bill Flores"@en .
+
+<http://dbpedia.org/resource/Christopher_Pyne> a ns2:Politician ;
+    ns2:label "Christopher Pyne"@en .
+
+<http://dbpedia.org/resource/Cory_Bernardi> a ns2:Politician ;
+    ns2:label "Cory Bernardi"@en .
+
+<http://dbpedia.org/resource/James_Pearce> a ns2:Politician ;
+    ns2:label "James Pearce"@en .
+
+<http://dbpedia.org/resource/Jay_Kim> a ns2:Politician ;
+    ns2:label "Jay Kim"@en .
+
+<http://dbpedia.org/resource/John_Rodriguez> a ns2:Politician ;
+    ns2:label "John Rodriguez"@en .
+
+<http://dbpedia.org/resource/Louise_Mensch> a ns2:Politician ;
+    ns2:label "Louise Mensch"@en .
+
+<http://dbpedia.org/resource/Nelson_Taylor> a ns2:Politician ;
+    ns2:label "Nelson Taylor"@en .
+

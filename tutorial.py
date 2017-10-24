@@ -28,8 +28,10 @@ def sparql():
     app.logger.debug('You arrived at ' + url_for('sparql'))
     app.logger.debug('I received the following arguments' + str(request.args) )
 
-    endpoint = request.args.get('endpoint', None)
+    endpoint = 'http://dbpedia.org/sparql'
     query = request.args.get('query', None)
+
+    print(query)
 
     return_format = request.args.get('format','JSON')
 

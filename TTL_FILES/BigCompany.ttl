@@ -1,0 +1,102 @@
+@prefix ns2: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://dbpedia.org/resource/Aegean_Airlines> a ns2:BigCompany ;
+    ns2:label "Aegean Airlines"@en .
+
+<http://dbpedia.org/resource/Aer_Lingus> a ns2:BigCompany ;
+    ns2:label "Aer Lingus"@en .
+
+<http://dbpedia.org/resource/Air_Canada> a ns2:BigCompany ;
+    ns2:label "Air Canada"@en .
+
+<http://dbpedia.org/resource/Alpha_Bank> a ns2:BigCompany ;
+    ns2:label "Alpha Bank"@en .
+
+<http://dbpedia.org/resource/American_Airlines> a ns2:BigCompany ;
+    ns2:label "American Airlines"@en .
+
+<http://dbpedia.org/resource/American_Express> a ns2:BigCompany ;
+    ns2:label "American Express"@en .
+
+<http://dbpedia.org/resource/Applebee's> a ns2:BigCompany ;
+    ns2:label "Applebee's"@en .
+
+<http://dbpedia.org/resource/Audi> a ns2:BigCompany ;
+    ns2:label "Audi"@en .
+
+<http://dbpedia.org/resource/BBC> a ns2:BigCompany ;
+    ns2:label "BBC"@en .
+
+<http://dbpedia.org/resource/BMW> a ns2:BigCompany ;
+    ns2:label "BMW"@en .
+
+<http://dbpedia.org/resource/Bank_of_Cyprus> a ns2:BigCompany ;
+    ns2:label "Bank of Cyprus"@en .
+
+<http://dbpedia.org/resource/Casas_Bahia> a ns2:BigCompany ;
+    ns2:label "Casas Bahia"@en .
+
+<http://dbpedia.org/resource/Dell> a ns2:BigCompany ;
+    ns2:label "Dell"@en .
+
+<http://dbpedia.org/resource/Facebook> a ns2:BigCompany ;
+    ns2:label "Facebook"@en .
+
+<http://dbpedia.org/resource/Ford_Motor_Company> a ns2:BigCompany ;
+    ns2:label "Ford Motor Company"@en .
+
+<http://dbpedia.org/resource/General_Motors> a ns2:BigCompany ;
+    ns2:label "General Motors"@en .
+
+<http://dbpedia.org/resource/Google> a ns2:BigCompany ;
+    ns2:label "Google"@en .
+
+<http://dbpedia.org/resource/H&M> a ns2:BigCompany ;
+    ns2:label "H&M"@en .
+
+<http://dbpedia.org/resource/Honda> a ns2:BigCompany ;
+    ns2:label "Honda"@en .
+
+<http://dbpedia.org/resource/IBM> a ns2:BigCompany ;
+    ns2:label "IBM"@en .
+
+<http://dbpedia.org/resource/Intel> a ns2:BigCompany ;
+    ns2:label "Intel"@en .
+
+<http://dbpedia.org/resource/Kodak> a ns2:BigCompany ;
+    ns2:label "Kodak"@en .
+
+<http://dbpedia.org/resource/Microsoft> a ns2:BigCompany ;
+    ns2:label "Microsoft"@en .
+
+<http://dbpedia.org/resource/OTE> a ns2:BigCompany ;
+    ns2:label "OTE"@en .
+
+<http://dbpedia.org/resource/Samsung_Electronics> a ns2:BigCompany ;
+    ns2:label "Samsung Electronics"@en .
+
+<http://dbpedia.org/resource/Singapore_Airlines> a ns2:BigCompany ;
+    ns2:label "Singapore Airlines"@en .
+
+<http://dbpedia.org/resource/Taco_Bell> a ns2:BigCompany ;
+    ns2:label "Taco Bell"@en .
+
+<http://dbpedia.org/resource/Tesco> a ns2:BigCompany ;
+    ns2:label "Tesco"@en .
+
+<http://dbpedia.org/resource/ThoughtWorks> a ns2:BigCompany ;
+    ns2:label "ThoughtWorks"@en .
+
+<http://dbpedia.org/resource/TripAdvisor> a ns2:BigCompany ;
+    ns2:label "TripAdvisor"@en .
+
+<http://dbpedia.org/resource/Twitter> a ns2:BigCompany ;
+    ns2:label "Twitter"@en .
+
+<http://dbpedia.org/resource/Wendy's> a ns2:BigCompany ;
+    ns2:label "Wendy's"@en .
+

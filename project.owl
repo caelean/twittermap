@@ -59,6 +59,12 @@
     
 
 
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#displayName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#displayName"/>
+    
+
+
     <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLatitude -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLatitude">
@@ -88,6 +94,12 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#influenceMetric">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
     </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#label -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#label"/>
     
 
 
@@ -132,9 +144,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Actor -->
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Artist -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Actor">
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Artist">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
     </owl:Class>
     
@@ -148,14 +160,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Author -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Author">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#AutomotiveCompany -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#AutomotiveCompany">
@@ -164,9 +168,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Businessperson -->
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#BigCompany -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Businessperson">
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#BigCompany">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Comedian -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Comedian">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
     </owl:Class>
     
@@ -175,6 +187,7 @@
     <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasHandle"/>
@@ -183,6 +196,12 @@
             </owl:Restriction>
         </rdfs:subClassOf>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Entity"/>
     
 
 
@@ -219,6 +238,7 @@
     <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasHandle"/>
@@ -238,26 +258,25 @@
     
 
 
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#PrivateCompany -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#PrivateCompany">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
-        <owl:disjointWith rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#PublicCompany"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#PublicCompany -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#PublicCompany">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#RetailCompany -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#RetailCompany">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Scientist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Scientist">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#SmallCompany -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#SmallCompany">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
     </owl:Class>
     
@@ -274,72 +293,6 @@
             </owl:Restriction>
         </owl:equivalentClass>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Donald_Trump -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Donald_Trump">
-        <rdf:type rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
-        <ex:hasHandle rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#RealDonaldTrump"/>
-        <ex:hasLocation rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Washington_DC"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Evan_Doyle -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Evan_Doyle">
-        <rdf:type rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
-        <ex:hasHandle rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#RealEvanDoyle"/>
-        <ex:hasLocation rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Washington_DC"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#RealDonaldTrump -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#RealDonaldTrump">
-        <rdf:type rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
-        <ex:hasLocation rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Washington_DC"/>
-        <ex:influenceMetric rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</ex:influenceMetric>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#RealEvanDoyle -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#RealEvanDoyle">
-        <rdf:type rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
-        <ex:influenceMetric rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</ex:influenceMetric>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#SanMateo -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#SanMateo">
-        <rdf:type rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#Washington_DC -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Washington_DC">
-        <rdf:type rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
-    </owl:NamedIndividual>
     
 
 
@@ -371,7 +324,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Entity"/>
                         <swrl:argument1 rdf:resource="urn:swrl#p"/>
                     </rdf:Description>
                 </rdf:first>

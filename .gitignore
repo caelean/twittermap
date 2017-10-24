@@ -101,6 +101,7 @@ ENV/
 .mypy_cache/
 
 # Protege bullshit
+queries.txt
 catalog-v001.xml
 
 # Shhh

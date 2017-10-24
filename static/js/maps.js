@@ -1,7 +1,4 @@
-
-// This example requires the Visualization library. Include the libraries=visualization
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
+// twitter map
 
 var map, heatmap, bounds, points, points_on_map;
 
@@ -40,6 +37,9 @@ function extendMap() {
 
 function onMapMove() {
 	bounds = map.getBounds().toJSON()
+	center = map.getCenter().toJSON()
+	document.getElementById("lat").innerHTML = center.lat;
+	document.getElementById("lng").innerHTML = center.lng;
 	document.getElementById("north").innerHTML = bounds.north;
 	document.getElementById("west").innerHTML = bounds.west
 	document.getElementById("east").innerHTML = bounds.east;
@@ -83,20 +83,6 @@ $("#search").on('keyup', function(e){
     }
 });
 
-function readTextFile(fileName)
-{
-	var file = new XMLHttpRequest();
-	file.open("GET", fileName, false);
-	file.onreadystatechange = function () {
-    if(file.readyState === 4) {
-      if(file.status === 200 || file.status == 0) {
-       	return file.responseText;
-      }
-    }
-	}
-	rawFile.send(null);
-}
-
 
 function changeGradient() {
   var gradient = [
@@ -126,9 +112,17 @@ function changeOpacity() {
   heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
 }
 
+function weightBy(value) {
+	console.log("Weight: " + value);
+}
+
+function filterBy(value) {
+	console.log("Sort: " + value);
+}
+
 function getPoints() {
 	pts = []
-	for(var i = 0; i < 10000; i++) {
+	for(var i = 0; i < 100; i++) {
 		var lat = (Math.random() * 160) - 80;
 		var long = (Math.random() * 360) - 180;
 		var weight = Math.random() * 200;

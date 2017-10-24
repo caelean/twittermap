@@ -40,16 +40,27 @@ function onMapMove() {
 	center = map.getCenter().toJSON()
 	document.getElementById("lat").innerHTML = center.lat;
 	document.getElementById("lng").innerHTML = center.lng;
-	document.getElementById("north").innerHTML = bounds.north;
-	document.getElementById("west").innerHTML = bounds.west
-	document.getElementById("east").innerHTML = bounds.east;
-	document.getElementById("south").innerHTML = bounds.south;
 
-	var num_points_on_map = 0
+	points_on_map = []
 	for(var i = 0; i < points.length; i++) {
-		num_points_on_map += (pointInBounds(points[i].location, bounds) ? 1 : 0);
+		if (pointInBounds(points[i].location, bounds)) {
+			points_on_map.push({name: points[i].name, influence: points[i].weight})
+		}
 	}
-	document.getElementById("points").innerHTML = num_points_on_map;
+	points_on_map.sort(function(a,b){
+      if( a.influence > b.influence){
+          return -1;
+      }else if( a.influence < b.influence ) {
+          return 1;
+      }
+      return 0;
+   });
+	document.getElementById("points").innerHTML = points_on_map.length;
+	document.getElementById("one").innerHTML = points_on_map[0].name;
+	document.getElementById("two").innerHTML = points_on_map[1].name;
+	document.getElementById("three").innerHTML = points_on_map[2].name;
+	document.getElementById("four").innerHTML = points_on_map[3].name;
+	document.getElementById("five").innerHTML = points_on_map[4].name;
 }
 
 function pointInBounds(point, bounds) {
@@ -82,7 +93,6 @@ $("#search").on('keyup', function(e){
 			);
     }
 });
-
 
 function changeGradient() {
   var gradient = [
@@ -122,12 +132,17 @@ function filterBy(value) {
 
 function getPoints() {
 	pts = []
-	for(var i = 0; i < 100; i++) {
-		var lat = (Math.random() * 160) - 80;
-		var long = (Math.random() * 360) - 180;
-		var weight = Math.random() * 200;
-		var point = {location: new google.maps.LatLng(lat, long), weight: weight}
+	jQuery.each(data, function(i, point) {
+		var lat = point.lat;
+		var lng = point.long;
+		var weight = point.influence;
+		var point = {
+			location: new google.maps.LatLng(lat, lng),
+			weight: weight,
+			name: point.name,
+			handle: point.handle
+		};
 		pts.push(point);
-	}
+	});
 	return pts;
 }

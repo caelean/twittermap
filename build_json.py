@@ -1,6 +1,7 @@
 import sys
 import json
 from SPARQLWrapper import SPARQLWrapper, JSON
+from collections import defaultdict
 
 STARDOG_ENDPOINT = 'http://localhost:5820/final_project/query'
 
@@ -32,5 +33,24 @@ sparql = SPARQLWrapper(STARDOG_ENDPOINT)
 sparql.setQuery(QUERY)
 sparql.setReturnFormat(JSON)
 response = sparql.query().convert()
-with open("dump.json", 'w') as f:
-	json.dump(response, f)
+
+results = {}
+for user in response['results']['bindings']:
+	handle = user['handle']['value']
+	if handle in results:
+			results[handle]['categories'].append(user['type']['value'].rsplit('#')[-1])
+	else:
+		counter += 1
+		entry = {}
+		entry['name'] = user['name']['value']
+		entry['influence'] = float(user['influence']['value'])
+		entry['retweets'] = int(user['retweets']['value'])
+		entry['followers'] = int(user['followers']['value'])
+		entry['lat'] = float(user['lat']['value'])
+		entry['long'] = float(user['long']['value'])
+		entry['categories'] = [user['type']['value'].rsplit('#')[-1]]
+		results[handle] = entry
+data = 'var data = ' + json.dumps(results) + ';\n'
+with open("./static/js/data.js", 'w') as f:
+	f.write(data)
+	f.close()

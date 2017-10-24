@@ -37,7 +37,7 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ns1: <http://www.semanticweb.org/caeleanb/ontologies/twittermap#>
 
-SELECT ?handle ?name ?type ?influence ?followers ?retweets ?lat ?long
+SELECT ?handle ?name ?influence ?followers ?retweets ?lat ?long
 WHERE {
 	?h ns1:realHandle ?handle .
 	?h ns1:displayName ?name .

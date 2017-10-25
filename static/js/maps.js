@@ -1,6 +1,6 @@
 // twitter map
 
-var map, heatmap, bounds, points, points_on_map;
+var map, heatmap, bounds, points, points_on_map, filter, weight;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -11,7 +11,9 @@ function initMap() {
 		streetViewControl: false,
 		styles: style,
 	});
-	points = getPoints();
+	filter = "None";
+	weight = "influence";
+	points = getPoints(filter, weight);
   heatmap = new google.maps.visualization.HeatmapLayer({
     data: points,
     map: map,
@@ -44,23 +46,42 @@ function onMapMove() {
 	points_on_map = []
 	for(var i = 0; i < points.length; i++) {
 		if (pointInBounds(points[i].location, bounds)) {
-			points_on_map.push({name: points[i].name, influence: points[i].weight})
+			points_on_map.push(points[i])
 		}
 	}
 	points_on_map.sort(function(a,b){
-      if( a.influence > b.influence){
+      if( a.weight > b.weight){
           return -1;
-      }else if( a.influence < b.influence ) {
+      }else if( a.weight < b.weight ) {
           return 1;
       }
       return 0;
    });
-	document.getElementById("points").innerHTML = points_on_map.length;
-	document.getElementById("one").innerHTML = points_on_map[0].name;
-	document.getElementById("two").innerHTML = points_on_map[1].name;
-	document.getElementById("three").innerHTML = points_on_map[2].name;
-	document.getElementById("four").innerHTML = points_on_map[3].name;
-	document.getElementById("five").innerHTML = points_on_map[4].name;
+	num_points = points_on_map.length;
+	document.getElementById("points").innerHTML = num_points;
+	if (num_points > 4)
+		document.getElementById("five").innerHTML = points_on_map[4].handle + ' ' + points_on_map[0].weight;
+	else
+		document.getElementById("five").innerHTML = "";
+	if (num_points > 3)
+		document.getElementById("four").innerHTML = points_on_map[3].handle + ' ' + points_on_map[0].weight;
+	else
+		document.getElementById("four").innerHTML = "";
+	if (num_points > 2)
+		document.getElementById("three").innerHTML = points_on_map[2].handle + ' ' + points_on_map[0].weight;
+	else
+		document.getElementById("three").innerHTML = "";
+	if (num_points > 1)
+		document.getElementById("two").innerHTML = points_on_map[1].handle + ' ' + points_on_map[0].weight;
+	else
+		document.getElementById("two").innerHTML = "";
+	if (num_points > 0)
+		document.getElementById("one").innerHTML = points_on_map[0].handle + ' ' + points_on_map[0].weight;
+	else
+		document.getElementById("one").innerHTML = "";
+
+
+
 }
 
 function pointInBounds(point, bounds) {
@@ -77,7 +98,7 @@ function pointInBounds(point, bounds) {
 }
 
 $("#search").on('keyup', function(e){
-    if(e.keyCode == 13){
+    if(e.keyCode === 13){
 			var query = $("#search").val().replace(' ', '+');
 			var key = "&key=AIzaSyCZBUXlJTya934fLCVMwtZZ_UfyYpyx6_8"
 			var url = "https://maps.googleapis.com/maps/api/geocode/json?address=" + query + key
@@ -115,7 +136,7 @@ function changeGradient() {
 }
 
 function changeRadius() {
-  heatmap.set('radius', heatmap.get('radius') ? null : 100);
+  heatmap.set('radius', heatmap.get('radius') ? null : 30);
 }
 
 function changeOpacity() {
@@ -123,26 +144,40 @@ function changeOpacity() {
 }
 
 function weightBy(value) {
-	console.log("Weight: " + value);
+	weight = value;
+	points = getPoints(filter, weight);
+	heatmap.setMap(null)
+	heatmap = new google.maps.visualization.HeatmapLayer({
+    data: points,
+		map: map,
+	});
 }
 
 function filterBy(value) {
-	console.log("Sort: " + value);
+	filter = value;
+	points= getPoints(filter, weight);
+	heatmap.setMap(null);
+	heatmap = new google.maps.visualization.HeatmapLayer({
+    data: points,
+		map: map,
+	});
 }
 
 function getPoints() {
 	pts = []
-	jQuery.each(data, function(i, point) {
-		var lat = point.lat;
-		var lng = point.long;
-		var weight = point.influence;
-		var point = {
-			location: new google.maps.LatLng(lat, lng),
-			weight: weight,
-			name: point.name,
-			handle: point.handle
-		};
-		pts.push(point);
+	jQuery.each(data, function(i, user) {
+		if(filter === "None" || (user.categories && user.categories.indexOf(filter) >= 0)) {
+			var lat = user.lat;
+			var lng = user.long;
+			var this_weight = user[weight];
+			var point = {
+				location: new google.maps.LatLng(lat, lng),
+				weight: this_weight,
+				name: user.name,
+				handle: user.handle
+			};
+			pts.push(point);
+		}
 	});
 	return pts;
 }

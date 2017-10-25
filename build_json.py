@@ -70,6 +70,7 @@ for user in response:
 	else:
 		entry = {}
 		entry['name'] = user['name']['value']
+		entry['handle'] = handle
 		entry['influence'] = float(user['influence']['value'])
 		entry['retweets'] = int(user['retweets']['value'])
 		entry['followers'] = int(user['followers']['value'])

@@ -60,19 +60,19 @@ function onMapMove() {
 	num_points = points_on_map.length;
 	document.getElementById("points").innerHTML = num_points;
 	if (num_points > 4)
-		document.getElementById("five").innerHTML = points_on_map[4].handle + ' ' + points_on_map[0].weight;
+		document.getElementById("five").innerHTML = points_on_map[4].handle + ' ' + points_on_map[4].weight;
 	else
 		document.getElementById("five").innerHTML = "";
 	if (num_points > 3)
-		document.getElementById("four").innerHTML = points_on_map[3].handle + ' ' + points_on_map[0].weight;
+		document.getElementById("four").innerHTML = points_on_map[3].handle + ' ' + points_on_map[3].weight;
 	else
 		document.getElementById("four").innerHTML = "";
 	if (num_points > 2)
-		document.getElementById("three").innerHTML = points_on_map[2].handle + ' ' + points_on_map[0].weight;
+		document.getElementById("three").innerHTML = points_on_map[2].handle + ' ' + points_on_map[2].weight;
 	else
 		document.getElementById("three").innerHTML = "";
 	if (num_points > 1)
-		document.getElementById("two").innerHTML = points_on_map[1].handle + ' ' + points_on_map[0].weight;
+		document.getElementById("two").innerHTML = points_on_map[1].handle + ' ' + points_on_map[1].weight;
 	else
 		document.getElementById("two").innerHTML = "";
 	if (num_points > 0)

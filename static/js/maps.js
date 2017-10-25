@@ -60,23 +60,23 @@ function onMapMove() {
 	num_points = points_on_map.length;
 	document.getElementById("points").innerHTML = num_points;
 	if (num_points > 4)
-		document.getElementById("five").innerHTML = points_on_map[4].handle;
+		document.getElementById("five").innerHTML = points_on_map[4].handle + ' ' + points_on_map[0].weight;
 	else
 		document.getElementById("five").innerHTML = "";
 	if (num_points > 3)
-		document.getElementById("four").innerHTML = points_on_map[3].handle;
+		document.getElementById("four").innerHTML = points_on_map[3].handle + ' ' + points_on_map[0].weight;
 	else
 		document.getElementById("four").innerHTML = "";
 	if (num_points > 2)
-		document.getElementById("three").innerHTML = points_on_map[2].handle;
+		document.getElementById("three").innerHTML = points_on_map[2].handle + ' ' + points_on_map[0].weight;
 	else
 		document.getElementById("three").innerHTML = "";
 	if (num_points > 1)
-		document.getElementById("two").innerHTML = points_on_map[1].handle;
+		document.getElementById("two").innerHTML = points_on_map[1].handle + ' ' + points_on_map[0].weight;
 	else
 		document.getElementById("two").innerHTML = "";
 	if (num_points > 0)
-		document.getElementById("one").innerHTML = points_on_map[0].handle;
+		document.getElementById("one").innerHTML = points_on_map[0].handle + ' ' + points_on_map[0].weight;
 	else
 		document.getElementById("one").innerHTML = "";
 
@@ -156,7 +156,7 @@ function weightBy(value) {
 function filterBy(value) {
 	filter = value;
 	points= getPoints(filter, weight);
-	heatmap.setMap(null)
+	heatmap.setMap(null);
 	heatmap = new google.maps.visualization.HeatmapLayer({
     data: points,
 		map: map,
@@ -166,7 +166,7 @@ function filterBy(value) {
 function getPoints() {
 	pts = []
 	jQuery.each(data, function(i, user) {
-		if(filter === "None" || user.categories.indexOf(filter) >= 0) {
+		if(filter === "None" || (user.categories && user.categories.indexOf(filter) >= 0)) {
 			var lat = user.lat;
 			var lng = user.long;
 			var this_weight = user[weight];

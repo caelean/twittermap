@@ -7,7 +7,7 @@ from urllib import quote
 from SPARQLWrapper import SPARQLWrapper, JSON, RDF
 
 STARDOG_ENDPOINT = 'http://localhost:5820/final_project/query'
-LOCATION_DIR = "LOC_TTL/"
+LOCATION_DIR = "../LOC_TTL/"
 PRINTABLE = set(string.printable)
 
 SCREEN_NAME_QUERY= """

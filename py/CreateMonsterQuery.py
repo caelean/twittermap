@@ -1,4 +1,4 @@
-FILENAME = "twitterTriples.ttl"
+FILENAME = "../TTL_FILES/twitterTriples.ttl"
 # DEST_FILE = "filter.txt"
 
 lines = []

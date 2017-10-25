@@ -1,9 +1,9 @@
 import sys
 import requests
-import create_monster_query
+import CreateMonsterQuery
 from SPARQLWrapper import SPARQLWrapper, RDF
 
-TTL_DIR = "TTL_FILES/"
+TTL_DIR = "../TTL_FILES/"
 
 LOCAL_PERSON_TYPES = ["Scientist", "Athlete", "Artist",
 	"Musician", "Politician", "Comedian"]
@@ -47,7 +47,7 @@ CONSTRUCT{
 WHERE {
     ?s rdfs:label ?name .
     %s
-""" % (local_portion, remote_portion) + create_monster_query.get_filter() + "\n" +
+""" % (local_portion, remote_portion) + CreateMonsterQuery.get_filter() + "\n" +
 		"}")
 
 def write_rdf(local_portion, remote_portion):
@@ -70,4 +70,4 @@ for (local_type, remote_portion) in zip(LOCAL_COMPANY_TYPES, REMOTE_COMPANY_PORT
 	print("Writing TTL for: " + local_type)
 	local_portion = "?s rdf:type ns1:" + local_type + " .\n?s ns1:label ?name"
 	remote_portion = "?s rdf:type dbo:Company .\n" + remote_portion
-	write_rdf(local_portion, remote_portion)	
+	write_rdf(local_portion, remote_portion)

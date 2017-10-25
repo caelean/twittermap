@@ -80,6 +80,6 @@ for user in response:
 			entry['categories'] = [user['type']['value'].rsplit('#')[-1]]
 		results[handle] = entry
 data = 'var data = ' + json.dumps(results) + ';\n'
-with open("./static/js/data.js", 'w') as f:
+with open("../static/js/data.js", 'w') as f:
 	f.write(data)
 	f.close()

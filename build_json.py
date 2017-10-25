@@ -56,16 +56,17 @@ WHERE {
 
 def dump_query(query):
 	sparql = SPARQLWrapper(STARDOG_ENDPOINT)
-	sparql.setQuery(QUERY)
+	sparql.setQuery(query)
 	sparql.setReturnFormat(JSON)
 	return sparql.query().convert()['results']['bindings']
 
 response = dump_query(QUERY_2) + dump_query(QUERY) # Combine both queries
+
 results = {}
 for user in response:
 	handle = user['handle']['value']
 	if handle in results and 'type' in user:
-			results[handle]['categories'].append(user['type']['value'].rsplit('#')[-1])
+		results[handle]['categories'].append(user['type']['value'].rsplit('#')[-1])
 	else:
 		entry = {}
 		entry['name'] = user['name']['value']

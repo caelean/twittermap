@@ -61,8 +61,8 @@ def dump_query(query):
 	return sparql.query().convert()['results']['bindings']
 
 response = dump_query(QUERY_2) + dump_query(QUERY) # Combine both queries
-
 results = {}
+
 for user in response:
 	handle = user['handle']['value']
 	if handle in results and 'type' in user:

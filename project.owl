@@ -8,8 +8,26 @@
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
     
 
 
@@ -81,18 +99,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasMarketCap -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasMarketCap">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#influenceMetric -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#influenceMetric">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -103,16 +120,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#locInfluenceMetric -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#locInfluenceMetric"/>
-    
-
-
     <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#numFollowers -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#numFollowers">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
@@ -120,16 +138,21 @@
     <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#numRetweets -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#numRetweets">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#residence -->
+    <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#realHandle -->
 
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#residence">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person"/>
-    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#realHandle"/>
     
 
 
@@ -188,13 +211,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Company">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Entity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasHandle"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -239,13 +255,6 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Person">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Entity"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasHandle"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -284,15 +293,7 @@
 
     <!-- http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLocation"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#Location"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-    </owl:Class>
+    <owl:Class rdf:about="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
     
 
 
@@ -304,16 +305,25 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    <rdf:Description rdf:about="urn:swrl#p">
+    <rdf:Description rdf:about="#p">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl#y">
+    <rdf:Description rdf:about="#y">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
-    <rdf:Description rdf:about="urn:swrl#x">
+    <rdf:Description rdf:about="#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="#h">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LocInfluence</rdfs:label>
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
         <swrl:body>
             <rdf:Description>
@@ -322,7 +332,7 @@
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
                         <swrl:classPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#p"/>
+                        <swrl:argument1 rdf:resource="#p"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest>
@@ -332,8 +342,8 @@
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                                 <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLocation"/>
-                                <swrl:argument1 rdf:resource="urn:swrl#p"/>
-                                <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                                <swrl:argument1 rdf:resource="#p"/>
+                                <swrl:argument2 rdf:resource="#y"/>
                             </rdf:Description>
                         </rdf:first>
                         <rdf:rest>
@@ -343,8 +353,8 @@
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
                                         <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#influenceMetric"/>
-                                        <swrl:argument1 rdf:resource="urn:swrl#p"/>
-                                        <swrl:argument2 rdf:resource="urn:swrl#x"/>
+                                        <swrl:argument1 rdf:resource="#p"/>
+                                        <swrl:argument2 rdf:resource="#x"/>
                                     </rdf:Description>
                                 </rdf:first>
                                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -360,9 +370,174 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#locInfluenceMetric"/>
-                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
-                        <swrl:argument2 rdf:resource="urn:swrl#x"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#influenceMetric"/>
+                        <swrl:argument1 rdf:resource="#y"/>
+                        <swrl:argument2 rdf:resource="#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LocFollowers</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+                        <swrl:argument1 rdf:resource="#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLocation"/>
+                                <swrl:argument1 rdf:resource="#p"/>
+                                <swrl:argument2 rdf:resource="#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#numFollowers"/>
+                                        <swrl:argument1 rdf:resource="#p"/>
+                                        <swrl:argument2 rdf:resource="#x"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#numFollowers"/>
+                        <swrl:argument1 rdf:resource="#y"/>
+                        <swrl:argument2 rdf:resource="#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LocRetweets</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#TwitterHandle"/>
+                        <swrl:argument1 rdf:resource="#p"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasLocation"/>
+                                <swrl:argument1 rdf:resource="#p"/>
+                                <swrl:argument2 rdf:resource="#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#numRetweets"/>
+                                        <swrl:argument1 rdf:resource="#p"/>
+                                        <swrl:argument2 rdf:resource="#x"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#numRetweets"/>
+                        <swrl:argument1 rdf:resource="#y"/>
+                        <swrl:argument2 rdf:resource="#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Handles</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#label"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument2 rdf:resource="#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#displayName"/>
+                                <swrl:argument1 rdf:resource="#h"/>
+                                <swrl:argument2 rdf:resource="#s"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/caeleanb/ontologies/twittermap#hasHandle"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument2 rdf:resource="#h"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>

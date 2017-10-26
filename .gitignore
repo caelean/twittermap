@@ -104,5 +104,8 @@ ENV/
 queries.txt
 catalog-v001.xml
 
+# rdfpro is in my local dir
+rdfpro/
+
 # Shhh
 .keys.txt

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Heatmaps</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<link href="static/css/css.css" rel="stylesheet" type="text/css">
+    <style>
+    </style>
+  </head>
+
+  <body>
+		<button id="collapse-button" class="btn btn-light" onclick="extendMap()" data-toggle="collapse" data-target="#floating-panel" aria-expanded="false" aria-controls="floating-panel">
+			Hide controls
+		</button>
+		<div id="map"></div>
+    <div id="floating-panel" class="collapse show">
+			<div class="panel-box">
+				Search for a location:
+					<div class="input-group">
+						<input id="search" type="text" class="form-control">
+					</div>
+				<br>
+				Map Center:
+				<div>
+					&nbspLatitude : <span id="lat"/>
+				</div>
+				<div>
+				  &nbspLongitude: <span id="lng"/>
+				</div>
+				<div>
+				  Handles on map: <span id="points"/>
+				</div>
+			</div>
+			<div id="options" class="panel-box">
+				<div>
+					Filter by:
+					<select class="custom-select" onChange="filterBy(this.value)">
+					  <option value="Person">People</option>
+						<option value="Artist">&emsp;Artists</option>
+					  <option value="Athlete">&emsp;Athletes</option>
+						<option value="Comedian">&emsp;Comedians</option>
+						<option value="Musician">&emsp;Musicians</option>
+					  <option value="Politician">&emsp;Politicians</option>
+						<option value="Scientist">&emsp;Scientists</option>
+					  <option value="Company">Companies</option>
+						<option value="AutomotiveCompany">&emsp;Automotive</option>
+						<option value="financial">&emsp;Financial</option>
+					  <option value="InternetCompany">&emsp;Internet</option>
+						<option value="retail">&emsp;Retail</option>
+					  <option value="BigCompany">&emsp;Big (> 1000 employees)</option>
+						<option value="SmallCompany">&emsp;Small (&lt;= 1000 employees)</option>
+						<option value="None" selected="selected">None</option>
+					</select>
+				</div>
+				<div>
+					Weight by:
+					<select class="custom-select"  onChange="weightBy(this.value)">
+					  <option value="followers">Followers</option>
+					  <option value="retweets">Retweets</option>
+						<option value="influence" selected="selected">Influence</option>
+					</select>
+				</div>
+				<br>
+				<div>
+		      <button class="btn btn-light" onclick="changeGradient()">grad</button>
+		      <button class="btn btn-light" onclick="changeRadius()">radius</button>
+		      <button class="btn btn-light" onclick="changeOpacity()">opacity</button>
+					<button class="btn btn-light" onclick="debugger;">debug</button>
+				</div>
+			</div>
+			<div id="data-display" class="panel-box">
+				<ul class="list-group">
+				  <li class="list-group-item"><span id="one"/></li>
+				  <li class="list-group-item"><span id="two"/></li>
+				  <li class="list-group-item"><span id="three"/></li>
+				  <li class="list-group-item"><span id="four"/></li>
+					<li class="list-group-item"><span id="five"/></li>
+				</ul>
+			</div>
+			<div id="info" class="panel-box">
+				Twittermap<br><br>
+				Caelean Barnes<br>&<br>
+				Evan Doyle<br><br>
+				<span style="font-size:14px;">Dynamically view the influence of twitter users based on location</span>
+			</div>
+    </div>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		<script src="static/js/jquery-1.11.0.min.js"></script>
+		<script src="static/js/data.js"></script>
+		<script src="static/js/style.js"></script>
+    <script src="static/js/maps.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM8_cEr-cbYvTdCvbZT98iHQyHuzohK3g&libraries=visualization&callback=initMap">
+    </script>
+  </body>
+</html>

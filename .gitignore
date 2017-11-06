@@ -109,3 +109,5 @@ rdfpro/
 
 # Shhh
 .keys.txt
+
+.DS_Store
